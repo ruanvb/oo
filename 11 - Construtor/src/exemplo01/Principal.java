@@ -4,10 +4,9 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		Pessoa p = new Pessoa();
-		
-		p.obterDados();
-		
+		//Instanciar
+		Pessoa p1 = new Pessoa();
+		Pessoa p2 = new Pessoa();
 
 	}
 

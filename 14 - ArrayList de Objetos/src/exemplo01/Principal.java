@@ -4,11 +4,9 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		Pessoa p = new Pessoa();
-		
-		p.obterDados();
-		
-
+		Aluno a = new Aluno();
+		a.menu();
+	
 	}
 
 }

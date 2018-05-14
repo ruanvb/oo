@@ -1,13 +1,10 @@
-package exemplo01;
+package exemplo02;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		Pessoa p = new Pessoa();
-		
-		p.obterDados();
-		
+		Pessoa p1 = new Pessoa("Ruan", "Victor");
 
 	}
 
