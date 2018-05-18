@@ -12,7 +12,7 @@ public class Principal {
 
 		// JFrame
 		JFrame formulario = new JFrame("Produto");
-		formulario.setSize(460, 300);
+		formulario.setSize(250, 235);
 		formulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		formulario.setLayout(null);
 		formulario.setLocationRelativeTo(null);
@@ -27,10 +27,6 @@ public class Principal {
 		rotuloValor.setText("Valor: ");
 		rotuloValor.setFont(new Font("SansSerif", Font.ITALIC, 14));
 		rotuloValor.setBounds(10, 40, 50, 20);
-		
-		JLabel exibir = new JLabel();
-		exibir.setFont(new Font("SansSerif", Font.ITALIC, 14));
-		exibir.setBounds(10, 200, 400, 20);
 		
 		// JTextFields
 		JTextField nome = new JTextField();
@@ -55,10 +51,12 @@ public class Principal {
 		
 		// JButton
 		JButton botao = new JButton();
-		botao.setBounds(10, 135, 100, 40);
+		botao.setBounds(112, 135, 100, 40);
 		botao.setText("Confirmar");
 		
-		
+		JLabel exibir = new JLabel();
+		exibir.setFont(new Font("SansSerif", Font.ITALIC, 14));
+		exibir.setBounds(10, 100, 400, 20);
 		
 		botao.addActionListener(new ActionListener() {
 			
@@ -70,13 +68,16 @@ public class Principal {
 				
 				String mensagem = "";
 				
-				if(valordouble>500){
+				if((valordouble>500) && formas.getSelection().getActionCommand().equals("v")){
 					valorDesconto = valordouble*0.90;
 					mensagem = "O produto "+nome.getText()+" custará R$"+valorDesconto;
 					exibir.setText(mensagem);
+					exibir.setVisible(true);
+					
 				}else{
 					mensagem = "O produto "+nome.getText()+" custará R$"+valordouble;
 					exibir.setText(mensagem);
+					exibir.setVisible(true);
 				}
 				
 			}
