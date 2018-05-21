@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class Principal {
 
@@ -62,6 +63,22 @@ public class Principal {
 		opcoes.add(duplo);
 		opcoes.add(luxo);
 
+		//DefaultTableMode
+		DefaultTableModel exibirPrecos = new DefaultTableModel();
+		
+		exibirPrecos.addColumn("Apto Simples");
+		exibirPrecos.addColumn("Apto Duplo");
+		exibirPrecos.addColumn("Suíte Luxo");
+		
+		//Linhas do DefaultTableMode
+		exibirPrecos.addRow(new Object[]{"R$45,00","R$65,00","R$110,00"});
+		
+		
+		//JTable
+		
+		JTable tabela = new JTable(exibirPrecos);
+		tabela.setBounds(590, 410, 100, 30);
+		
 		// JButtons
 
 		JButton confirmar = new JButton();
@@ -103,6 +120,7 @@ public class Principal {
 		formulario.add(infdias);
 		formulario.add(confirmar);
 		formulario.add(exibir);
+		formulario.add(tabela);
 
 		formulario.setVisible(true);
 
