@@ -47,15 +47,16 @@ public class Acao {
 	}
 
 	public DefaultTableModel exibirPedidos() {
-
+		
 		// DefaultTableModel
 		DefaultTableModel modeloPedidos = new DefaultTableModel();
 		modeloPedidos.addColumn("Cliente");
 		modeloPedidos.addColumn("Data e Hora");
 		modeloPedidos.addColumn("Produtos");
 		modeloPedidos.addColumn("Quantidade");
-
-		for (int indice = 0; indice < Produtos.dados.size(); indice++) {
+		
+		
+		for (int indice = 0; indice < Pedidos.pedidos.size(); indice++) {
 			modeloPedidos.addRow(new Object[] { Pedidos.pedidos.get(indice).getCliente(),
 					Pedidos.pedidos.get(indice).getHoraConsumo(), Pedidos.pedidos.get(indice).getProduto(),
 					Pedidos.pedidos.get(indice).getQuantidade() });

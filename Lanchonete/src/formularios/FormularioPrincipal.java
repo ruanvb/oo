@@ -14,7 +14,7 @@ public class FormularioPrincipal {
 	public FormularioPrincipal() {
 
 		//JFrame
-		JFrame formulario = new JFrame();
+		JFrame formulario = new JFrame("Lanchonete");
 		formulario.setSize(440, 535);
 		formulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		formulario.setLayout(null);
@@ -84,8 +84,22 @@ public class FormularioPrincipal {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+			
 				
 				FormularioHistorico fh = new FormularioHistorico();
+			
+				
+				formulario.dispose();
+				
+			}
+		});
+		
+		botaoEstatisticas.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				FormularioEstatisticas fe = new FormularioEstatisticas();
 				
 				formulario.dispose();
 				

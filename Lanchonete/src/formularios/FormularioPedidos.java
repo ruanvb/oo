@@ -3,7 +3,6 @@ package formularios;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.swing.JButton;
@@ -73,11 +72,24 @@ public class FormularioPedidos {
 				int dia = tempo.getDayOfMonth();
 				int mes = tempo.getMonthValue();
 				int ano = tempo.getYear();
+				
+				int minuto = tempo.getMinute();
+				int hora = tempo.getHour();
 
-				// Hora
-				LocalDate hora = tempo.toLocalDate();
-				String horaConsumo = dia + "/" + mes + "/" + ano + " - " + hora;
+				String horaConsumo = dia + "/" +"0"+ mes + "/" + ano + " - " + hora+":"+"0"+minuto;
 
+				if(minuto>10){
+					
+					horaConsumo = dia + "/" +"0"+ mes + "/" + ano + " - " + hora+":"+minuto;
+					
+				}
+				
+				if(mes>10){
+					
+					horaConsumo = dia + "/" + mes + "/" + ano + " - " + hora+":"+minuto+"0";
+					
+				}
+				
 				int quantidade = Integer.parseInt(quantidadeP.getText());
 
 				ac.realizarPedido(cliente, produto, horaConsumo, quantidade);
